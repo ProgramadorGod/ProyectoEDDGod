@@ -1,0 +1,98 @@
+
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+    padding: 0;
+    margin: 0;  
+    font-size: 100%;
+    font-weight: normal;
+   }
+   table { border-collapse: collapse; border-spacing: 0; }
+   td, th, caption { font-weight: normal; text-align: left; }
+   img, fieldset { border: 0; }
+   ol { padding-left: 1.4em; list-style: decimal; }
+   ul { padding-left: 1.4em; list-style:square; }
+   q:before, q:after { content:''; }
+
+
+@font-face{
+	font-family: "StarboardText" ;
+	src: url("Starboard DEMO.otf");
+}
+
+#BodySection{
+    background-color: rgb(226, 226, 226);
+}
+
+#images{
+    width: 100%;
+	box-shadow: rgb(25, 26, 26) -1px 2px 3px 2px;
+    margin: 0px auto 60px;
+
+}
+
+
+
+.Semestres{
+    background-color: rgba(43, 111, 201, 0.26);
+    font: bold 20px "StarboardText";
+    width: 150px;
+    padding: 10px;
+    box-shadow: #063377a4 2px 2px 5px;
+    user-select: none;
+    text-align: center;
+    /* border: 1px solid #111636; */
+    /* -webkit-transform: scale(125%); */
+}
+
+.Semestres:hover{
+    -webkit-transition: 0.5s;
+    background-color: #051058bb;
+
+}
+
+li{
+    margin: 30px;
+    /* display: block; */
+
+}   
+
+.Documentos{
+    /* width: fit-content; */
+    margin: 50px 60px;
+    font: bold 10px "StarboardText";
+    color: rgb(4, 27, 95);
+
+    
+}
+
+
+
+#Bloques-xxx{
+    height: 50px;
+    /* text-align: center; */
+}
+
+#Content{
+    margin: 0px 50px;
+    width: fit-content;
+    padding-right: 40px;
+    border-right: 2px solid black ;
+    float: left;
+    /* -webkit-transform: scale(125%); */
+
+}
+
+.Cortes{
+    width: 200px;
+    float: left;
+    font: bold 20px "StarboardText";
+    margin: 10px 10px 90px;
+    text-align: center;
+    padding: 5px;
+    background-color: #c3c7d373;
+
+}
+
+.Cortes:hover{
+    -webkit-transition: 0.5s;
+    background-color: rgb(137, 139, 145);
+}

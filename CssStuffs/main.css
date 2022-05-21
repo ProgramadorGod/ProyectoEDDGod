@@ -1,0 +1,94 @@
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+    padding: 0;
+    margin: 0;  
+    font-size: 100%;
+    font-weight: normal;
+   }
+   table { border-collapse: collapse; border-spacing: 0; }
+   td, th, caption { font-weight: normal; text-align: left; }
+   img, fieldset { border: 0; }
+   ol { padding-left: 1.4em; list-style: decimal; }
+   ul { padding-left: 1.4em; list-style:square; }
+   q:before, q:after { content:''; }
+
+
+@font-face{
+	font-family: "StarboardText" ;
+	src: url("Daily Challenge DEMO.otf");
+}
+
+
+#Title{
+    font: bold 35px "StarboardText";
+    
+}
+
+#main{
+    text-align: left;
+    margin: 25px 10px 20px;
+    border-bottom: 2px solid #051058;
+}
+
+#inicial{
+    width: auto;
+    margin: 0%;
+    padding: 0%;
+}
+
+#images{
+    width: 100%;
+	box-shadow: rgb(25, 26, 26) -1px 2px 3px 2px;
+    margin: 0px auto 60px;
+
+}
+
+#cuerpo{
+    background-color: rgb(226, 226, 226);
+}
+
+#Subtitle{
+    /* text-align: left; */
+    /* padding: 900px auto 15px; */
+    font: bold 20px "StarboardText";
+    color: #07125c;
+
+}
+
+#Cuadrados{
+    font: bold 20px "StarboardText";
+    margin: 10px 10px 10px;
+}
+
+#Cuadros{
+    text-align: center;
+    margin: 10px 20px 50px;
+    padding: 10px;
+    border: 2px solid #051058;
+    float: left;
+    width: 150px;
+    height: 50px;
+    -webkit-transform: scale(100%);
+	-webkit-transition: 0.8s ease;
+    box-shadow: #175b82 3px 3px 6px;
+    background-color: hsla(0, 0%, 95%, 0.583);
+}
+@keyframes mianimacion{
+
+    0%{border: 3px solid #20053d;}
+    25%{border: 3px solid rgb(31, 59, 216);}
+    50%{border: 3px solid rgb(11, 12, 73);}
+    65%{border: 3px solid rgb(18, 132, 167);}
+    100%{border: 3px solid #20053d;}
+
+}
+#Cuadros:hover{
+    -webkit-transform: scale(110%);
+    box-shadow: #063377a4 5px 5px 10px;
+    background-color: rgb(221, 221, 221);
+    color: rgb(7, 38, 65);
+    -webkit-transition: 0.5s ease;
+    animation-name: mianimacion;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
