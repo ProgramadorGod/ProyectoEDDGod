@@ -103,6 +103,7 @@ li{
     margin: 10px 40px 90px;
     margin-bottom: 40px;
 
+    user-select: none;
     text-align: center;
     padding: 5px;
     padding-top: 8px;

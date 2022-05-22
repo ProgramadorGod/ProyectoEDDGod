@@ -35,6 +35,31 @@ var CorteC = document.getElementById("Corte3")
 
 CorteA.addEventListener("click",reemplazarA,false)
 
+var lista1 = ["Word 1","Excel 1","PowerPoint 1","Video A"]
+var lista2 = ["Pdf Parcial","Imagen","Word 4","Bloc De Notas", "Video B", "PythonVersión 4.5"]
+var lista3 = ["Word","Excel","Word","Imagen", "Pdf"]
+
+var Semestre1 = [lista1, lista2, lista3];
+
+var lista4 = ["a", "b", "c"]
+var lista5 = ["Ejemplo","Ejemplo", "Ejemplo","Ejemplo"]
+var lista6 = ["Ejemplo","Ejemplo","Ejemplo","Ejemplo","Ejemplo"]
+var Semestre2 = [lista4, lista5, lista6];
+
+var lista7 = ["Ejemplo", "Ejemplo","Ejemplo","Ejemplo","Ejemplo","Ejemplo"]
+var lista8 = ["Ejemplo", "Ejemplo","Ejemplo"]
+var lista9 = ["Ejemplo"]
+var Semestre3 = [lista7, lista8, lista9];
+var Semestre4 = [lista1, lista2, lista3];
+var Semestre5 = [lista1, lista2, lista3];
+var Semestre6 = [lista1, lista2, lista3];
+var Semestre7 = [lista1, lista2, lista3];
+var Semestre8 = [lista1, lista2, lista3];
+var Semestre9 = [lista1, lista2, lista3];
+ 
+
+
+
 function reemplazarA(semestre){
     // CorteA.style.background-color:;
     // alert("XD")
@@ -44,12 +69,11 @@ function reemplazarA(semestre){
     
     Semestre_1.style.background = "#051058bb";
     // alert("xd")
-    var lista = ["Word 1","Excel 1","PowerPoint 1","Video A"]
     var MostrarLista = document.getElementById("Archivos")
     MostrarLista.innerHTML=""
-    for(var x=0;x<lista.length;x++){
+    for(var x=0;x<Semestre1[0].length;x++){
         
-        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${lista[x]}</li>`;
+        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${Semestre1[0][x]}</li>`;
         // MostrarLista[0].style.margin = "10px";
     }
 
@@ -62,12 +86,11 @@ function reemplazarB(){
     CorteA.style.background = "#c3c7d373";
     CorteB.style.background = "#3a3e5c";
     CorteC.style.background = "#c3c7d373";
-    var lista = ["Pdf","Imagen","Word4","Bloc De Notas", "Video B", "PythonVersión4.5"]
     var MostrarLista = document.getElementById("Archivos")
     MostrarLista.innerHTML=""
 
-    for(var x=0;x<lista.length;x++){
-        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${lista[x]}</li>`;
+    for(var x=0;x<Semestre1[1].length;x++){
+        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${Semestre1[1][x]}</li>`;
     }
 }
 
@@ -77,12 +100,11 @@ function reemplazarC(){
     CorteA.style.background = "#c3c7d373";
     CorteC.style.background = "#3a3e5c";
     CorteB.style.background = "#c3c7d373";
-    var lista = ["Word","Excel","Word","Imagen", "Pdf"]
     var MostrarLista = document.getElementById("Archivos")
     MostrarLista.innerHTML=""
 
-    for(var x=0;x<lista.length;x++){
-        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${lista[x]}</li>`;
+    for(var x=0;x<Semestre1[2].length;x++){
+        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${Semestre1[2][x]}</li>`;
     }
 }
 
