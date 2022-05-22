@@ -1,4 +1,5 @@
 var el = document.getElementsByClassName('Semestres')
+
 for(var x=0;x<el.length;x++){
     el[x].style.margin=`20px 10px`
 }
@@ -18,12 +19,23 @@ var b = document.getElementById("#2")
 
 var c = document.getElementById("#3")
 
-
-// alert("XD")
-
 var CorteA = document.getElementById("Corte1")
 var CorteB = document.getElementById("Corte2")
 var CorteC = document.getElementById("Corte3")
+
+// alert("XD")
+// var xdd = document.getElementById("Bloques-xxx").clientHeight
+// alert(a)
+
+
+
+// var cortesT = [CorteA, CorteB, CorteC]
+// xdd.addEventListener("resize",Ampliar,false);
+// function Ampliar(){
+//     var xdd = document.getElementById("Corte1").clientWidth
+//     alert(a)
+// }
+
 
 CorteA.addEventListener("click",reemplazarA,false)
 

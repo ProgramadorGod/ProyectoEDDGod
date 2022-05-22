@@ -19,6 +19,13 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
 
 #BodySection{
     background-color: rgb(226, 226, 226);
+    /* -webkit-transform:scale(110%); */
+    /* margin-top: 50px;
+    margin-left: 20px ; */
+}
+
+#Agrandar{
+   /* -webkit-transform: scale(101%);  */
 }
 
 #images{
@@ -66,7 +73,7 @@ li{
 
 
 #Bloques-xxx{
-    height: 50px;
+    height: 100px;
     /* text-align: center; */
 }
 
@@ -81,14 +88,15 @@ li{
 }
 
 .Cortes{
+    
     width: 200px;
     float: left;
     font: bold 20px "StarboardText";
-    margin: 10px 10px 90px;
+    margin: 10px 30px 90px;
     text-align: center;
     padding: 5px;
     background-color: #c3c7d373;
-
+    -webkit-transform: scale(110%);
 }
 
 .Cortes:hover{
