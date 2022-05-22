@@ -13,11 +13,7 @@ var Semestre_1 = document.getElementById("First");
 Semestre_1.addEventListener("click",reemplazarA,false);
 semestre = Semestre_1
 
-var a = document.getElementById("#1")
 
-var b = document.getElementById("#2")
-
-var c = document.getElementById("#3")
 
 var CorteA = document.getElementById("Corte1")
 var CorteB = document.getElementById("Corte2")
@@ -46,13 +42,16 @@ function reemplazarA(semestre){
     CorteB.style.background = "#c3c7d373";
     CorteC.style.background = "#c3c7d373";
     
-    a.textContent="Documento 1";
-    b.textContent="Documento 2";
-    c.textContent="Documento 3";
-    // alert("xd")
-
     Semestre_1.style.background = "#051058bb";
     // alert("xd")
+    var lista = ["Word 1","Excel 1","PowerPoint 1","Video A"]
+    var MostrarLista = document.getElementById("Archivos")
+    MostrarLista.innerHTML=""
+    for(var x=0;x<lista.length;x++){
+        
+        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${lista[x]}</li>`;
+        // MostrarLista[0].style.margin = "10px";
+    }
 
 }
 
@@ -63,9 +62,13 @@ function reemplazarB(){
     CorteA.style.background = "#c3c7d373";
     CorteB.style.background = "#3a3e5c";
     CorteC.style.background = "#c3c7d373";
-    a.textContent="PowerPoint 4"
-    b.textContent="Word 5"
-    c.textContent="Excel 6"
+    var lista = ["Pdf","Imagen","Word4","Bloc De Notas", "Video B", "PythonVersión4.5"]
+    var MostrarLista = document.getElementById("Archivos")
+    MostrarLista.innerHTML=""
+
+    for(var x=0;x<lista.length;x++){
+        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${lista[x]}</li>`;
+    }
 }
 
 CorteC.addEventListener("click",reemplazarC,false)
@@ -74,10 +77,17 @@ function reemplazarC(){
     CorteA.style.background = "#c3c7d373";
     CorteC.style.background = "#3a3e5c";
     CorteB.style.background = "#c3c7d373";
-    a.textContent="Jijijija"
-    b.textContent="Jijijija2"
-    c.textContent="Jijijija3"
+    var lista = ["Word","Excel","Word","Imagen", "Pdf"]
+    var MostrarLista = document.getElementById("Archivos")
+    MostrarLista.innerHTML=""
+
+    for(var x=0;x<lista.length;x++){
+        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${lista[x]}</li>`;
+    }
 }
+
+
+
 
 // var presionado = addEventListener("click",clicando,false)
 

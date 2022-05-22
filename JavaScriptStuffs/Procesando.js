@@ -1,4 +1,4 @@
-alert("XD")
+// alert("XD")
 window.addEventListener("resize",(e) => {
     var a = document.getElementById("Cuadrados").clientWidth
     console.log(a)
