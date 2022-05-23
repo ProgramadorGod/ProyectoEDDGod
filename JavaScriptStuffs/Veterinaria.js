@@ -96,7 +96,7 @@ function reemplazarA(semestre){
     CorteB.style.background = "#c3c7d373";
     CorteC.style.background = "#c3c7d373";
     
-    Semestre.style.background = "#051058bb";
+    Semestre_1.style.background = "#051058bb";
     // alert("xd")
     var MostrarLista = document.getElementById("Archivos")
     MostrarLista.innerHTML=""

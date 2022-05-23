@@ -116,3 +116,30 @@ li{
     -webkit-transition: 0.5s;
     background-color: rgb(137, 139, 145);
 }
+
+
+
+.focus-el {
+    background-color: white;
+}
+
+.rojo{
+    background-color: #06188bbb;
+}
+
+.rojo:hover{
+    background-color: #06188bbb;
+
+}
+
+
+.cortepresionado{
+    background-color: #3a3e5c;
+    color: rgb(238, 235, 243);
+
+}
+.cortepresionado:hover{
+    background-color: #3a3e5c;
+    color: rgb(238, 235, 243);
+
+}
