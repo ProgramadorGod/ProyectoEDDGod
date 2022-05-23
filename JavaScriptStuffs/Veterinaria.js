@@ -9,7 +9,29 @@ for(var x=0;x<el.length;x++){
 //     el[Zemestres]
 // }
 
-var Semestre_1 = document.getElementById("First");
+
+var NumSemestre = 1
+
+var NumRandom = 1
+var ListaAs = []
+var CantidadDeSemestres = document.getElementsByClassName("Semestres")
+for(var x=0;x<CantidadDeSemestres.length;x++){
+    var A = ("A"+`${NumRandom}`);
+    ListaAs[x] = A
+    NumRandom += 1;
+    // alert(CantidadDeSemestres[x])
+    CantidadDeSemestres[x].id=A
+    
+    var Visaje = document.getElementById(A)
+    // Visaje.addEventListener("Click",(e) =>{      
+    //     var NumSemestre = 1
+    // })
+}
+alert("XDd")
+
+
+
+var Semestre_1 = document.getElementById("A1");
 Semestre_1.addEventListener("click",reemplazarA,false);
 semestre = Semestre_1
 
@@ -56,9 +78,16 @@ var Semestre6 = [lista1, lista2, lista3];
 var Semestre7 = [lista1, lista2, lista3];
 var Semestre8 = [lista1, lista2, lista3];
 var Semestre9 = [lista1, lista2, lista3];
- 
 
+TotalSemestres = [Semestre1,Semestre2,Semestre3,Semestre4,Semestre5,Semestre6,Semestre7,Semestre8,Semestre9]
 
+// var Semestre = ("Semestre" + `${NumSemestre}`);
+for (var x=0;x<TotalSemestres.length;x++){
+    if (x==NumSemestre){
+        Semestre = TotalSemestres[x-1]
+        alert(Semestre)
+    }
+}
 
 function reemplazarA(semestre){
     // CorteA.style.background-color:;
@@ -67,18 +96,20 @@ function reemplazarA(semestre){
     CorteB.style.background = "#c3c7d373";
     CorteC.style.background = "#c3c7d373";
     
-    Semestre_1.style.background = "#051058bb";
+    Semestre.style.background = "#051058bb";
     // alert("xd")
     var MostrarLista = document.getElementById("Archivos")
     MostrarLista.innerHTML=""
-    for(var x=0;x<Semestre1[0].length;x++){
+    for(var x=0;x<Semestre[0].length;x++){
         
-        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${Semestre1[0][x]}</li>`;
+        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${Semestre[0][x]}</li>`;
         // MostrarLista[0].style.margin = "10px";
     }
 
 }
 
+
+// alert(Semestre`${NumSemestre}`)
 
 CorteB.addEventListener("click",reemplazarB,false)
 
@@ -89,8 +120,8 @@ function reemplazarB(){
     var MostrarLista = document.getElementById("Archivos")
     MostrarLista.innerHTML=""
 
-    for(var x=0;x<Semestre1[1].length;x++){
-        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${Semestre1[1][x]}</li>`;
+    for(var x=0;x<Semestre[1].length;x++){
+        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${Semestre[1][x]}</li>`;
     }
 }
 
@@ -101,10 +132,9 @@ function reemplazarC(){
     CorteC.style.background = "#3a3e5c";
     CorteB.style.background = "#c3c7d373";
     var MostrarLista = document.getElementById("Archivos")
-    MostrarLista.innerHTML=""
-
-    for(var x=0;x<Semestre1[2].length;x++){
-        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${Semestre1[2][x]}</li>`;
+    MostrarLista.innerHTML=""   
+    for(var x=0;x<Semestre[2].length;x++){
+        MostrarLista.innerHTML = MostrarLista.innerHTML + `<li>${Semestre[2][x]}</li>`;
     }
 }
 
