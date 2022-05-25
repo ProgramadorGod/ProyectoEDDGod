@@ -55,6 +55,8 @@ for(var el=0; el<elementList.length;el++) {
       })
 }
 
+// Alexandra es la más linda 
+
 
 var CorteA = document.getElementById("Corte1")
 var CorteB = document.getElementById("Corte2")
@@ -65,6 +67,11 @@ CorteB.addEventListener("click",reemplazarB,false)
 CorteC.addEventListener("click",reemplazarC,false)
 
 function reemplazarA(){
+    if (context.semester==""){
+        context.semester="0"
+        elementList[0].classList.add("rojo")
+    }
+
     context.court = 'corte 1'
     CorteA.classList.add("cortepresionado")
     CorteB.classList.remove("cortepresionado")
