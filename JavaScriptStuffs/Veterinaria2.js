@@ -72,15 +72,20 @@ function reemplazarA(){
         elementList[0].classList.add("rojo")
     }
 
-    context.court = 'corte 1'
-    CorteA.classList.add("cortepresionado")
-    CorteB.classList.remove("cortepresionado")
-    CorteC.classList.remove("cortepresionado")
-    console.log(context)
+context.court = 'corte 1'
+CorteA.classList.add("cortepresionado")
+CorteB.classList.remove("cortepresionado")
+CorteC.classList.remove("cortepresionado")
+
+console.log(context)
 
     
 }
 function reemplazarB(){
+    if (context.semester==""){
+        context.semester="0"
+        elementList[0].classList.add("rojo")
+    }
     context.court = 'corte 2'
 CorteA.classList.remove("cortepresionado")
 CorteB.classList.add("cortepresionado")
@@ -90,6 +95,10 @@ console.log(context)
 }
 
 function reemplazarC(){
+    if (context.semester==""){
+        context.semester="0"
+        elementList[0].classList.add("rojo")
+    }
     context.court = 'corte 3'
     CorteA.classList.remove("cortepresionado")
     CorteC.classList.add("cortepresionado")
