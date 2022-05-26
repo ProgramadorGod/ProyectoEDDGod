@@ -152,5 +152,10 @@ li{
     display:inline-block;
     text-align: center;
     margin-right:center;
+    padding: 10px;
+    
+    border: 2px solid rgb(126, 91, 91);
+    border-radius: 8px;
     
 }
+

@@ -114,7 +114,7 @@ function reemplazarC(){
     }
 
 var CarrerasVisibles = document.getElementById("Carrusel")
-var LongitudDiv = document.getElementById("Carrusel").clientWidth/7.6;
+var LongitudDiv = document.getElementById("Carrusel").clientWidth/7.9;
 var Constante =LongitudDiv
 var ListaCarrusel = ["Ingeniería Informática ","Trabajo Social ", "Licenciatura En Artes "
     ,"Administración De Negocios Internacionales" ,"Química", "Especialización En Gerencia De Proyectos"
