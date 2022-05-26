@@ -143,3 +143,14 @@ li{
     color: rgb(238, 235, 243);
 
 }
+
+.CarrerasCarrusel{
+    float:left;
+    position: relative;
+    font: bold 27px "StarboardText";
+    /* margin: 10px; */
+    display:inline-block;
+    text-align: center;
+    margin-right:center;
+    
+}

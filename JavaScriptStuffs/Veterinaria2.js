@@ -33,7 +33,13 @@ const DATA = [
 
 semesters.map((x,k) => {
     if(k === semesters.length ){ return }
-    element.innerHTML += `<div><h2 class="Semestres" semester="${k}">${TITLES[k]}</h2> </div>`
+    element.innerHTML += 
+    `<div><h2 class="Semestres" semester="${k}">
+    ${TITLES[k]}
+    </h2> </div>`
+
+
+
 })
 
 
@@ -106,6 +112,21 @@ function reemplazarC(){
     console.log(context)
 
     }
+
+var CarrerasVisibles = document.getElementById("Carrusel")
+var LongitudDiv = document.getElementById("Carrusel").clientWidth/7.6;
+var Constante =LongitudDiv
+var ListaCarrusel = ["Ingeniería Informática ","Trabajo Social ", "Licenciatura En Artes "
+    ,"Administración De Negocios Internacionales" ,"Química", "Especialización En Gerencia De Proyectos"
+ ].map((X,K)  => {
+     if (K>=3){ 
+        return
+    }
+    
+    CarrerasVisibles.innerHTML += `<div class ="CarrerasCarrusel" style="left:${LongitudDiv}px"> ${X} </div>`;
+
+    LongitudDiv+=Constante;
+ })
 
 
 
