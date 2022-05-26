@@ -55,13 +55,13 @@ for(var el=0; el<elementList.length;el++) {
             if (elementList[y] == elementList[x]){
                 e.target.classList.add("rojo")
             }
+            // if 
 
         }      
         }
       })
 }
 
-// Alexandra es la más linda 
 
 
 var CorteA = document.getElementById("Corte1")
@@ -114,19 +114,38 @@ function reemplazarC(){
     }
 
 var CarrerasVisibles = document.getElementById("Carrusel")
-var LongitudDiv = document.getElementById("Carrusel").clientWidth/7.9;
+var LongitudDiv = document.getElementById("Carrusel").clientWidth/11;
 var Constante =LongitudDiv
+var ListaCarrerasMostradas=[]
 var ListaCarrusel = ["Ingeniería Informática ","Trabajo Social ", "Licenciatura En Artes "
-    ,"Administración De Negocios Internacionales" ,"Química", "Especialización En Gerencia De Proyectos"
+    ,"Administración De Negocios Internacionales" ,"Ingeniería En Química", "Especialización En Gerencia De Proyectos"
  ].map((X,K)  => {
-     if (K>=3){ 
+     if (K>3) { 
         return
     }
     
     CarrerasVisibles.innerHTML += `<div class ="CarrerasCarrusel" style="left:${LongitudDiv}px"> ${X} </div>`;
+    ListaCarrerasMostradas.push(K);
 
     LongitudDiv+=Constante;
  })
+
+var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
+console.log(VariableCarreras)
+for (var x=0;x<VariableCarreras.length;x++){
+    VariableCarreras[x].addEventListener("click", e =>{
+        if (e.target == VariableCarreras[0]){
+           alert("0")
+        }
+        if (e.target == VariableCarreras[1]){
+            alert("1")
+         }
+        if (e.target == VariableCarreras[2]){
+            alert("2")
+         }
+    })
+    
+}
 
 
 
