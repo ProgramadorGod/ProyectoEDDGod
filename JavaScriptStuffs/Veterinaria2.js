@@ -29,6 +29,13 @@ const DATA = [
 ]
 
 
+var CorteA = document.getElementById("Corte1")
+var CorteB = document.getElementById("Corte2")
+var CorteC = document.getElementById("Corte3")
+
+CorteA.addEventListener("click",reemplazarA,false)
+CorteB.addEventListener("click",reemplazarB,false)
+CorteC.addEventListener("click",reemplazarC,false)
 
 
 semesters.map((x,k) => {
@@ -37,6 +44,7 @@ semesters.map((x,k) => {
     `<div><h2 class="Semestres" semester="${k}">
     ${TITLES[k]}
     </h2> </div>`
+
 
 
 
@@ -51,11 +59,15 @@ for(var el=0; el<elementList.length;el++) {
         console.log(context)
         for (var x=0;x<elementList.length;x++){
             elementList[x].classList.remove("rojo")
-           for(var y=0;y<elementList.length;y++){
-            if (elementList[y] == elementList[x]){
-                e.target.classList.add("rojo")
+            for(var y=0;y<elementList.length;y++){
+                if (elementList[y] == elementList[x]){
+                    e.target.classList.add("rojo")
             }
             // if 
+            if (context.court ==""){
+                context.court = "corte 1"
+                CorteA.classList.add("cortepresionado")
+            }
 
         }      
         }
@@ -63,14 +75,6 @@ for(var el=0; el<elementList.length;el++) {
 }
 
 
-
-var CorteA = document.getElementById("Corte1")
-var CorteB = document.getElementById("Corte2")
-var CorteC = document.getElementById("Corte3")
-
-CorteA.addEventListener("click",reemplazarA,false)
-CorteB.addEventListener("click",reemplazarB,false)
-CorteC.addEventListener("click",reemplazarC,false)
 
 function reemplazarA(){
     if (context.semester==""){
@@ -116,65 +120,84 @@ function reemplazarC(){
 var CarrerasVisibles = document.getElementById("Carrusel")
 var LongitudDiv = document.getElementById("Carrusel").clientWidth/11;
 var Constante =LongitudDiv
+var Izquierda = 1
+var Derecha = 3
 var ListaCarrerasMostradas=[]
 var ListaCarrusel = ["Ingeniería Informática ","Trabajo Social ", "Licenciatura En Artes "
     ,"Administración De Negocios Internacionales" ,"Ingeniería En Química", "Especialización En Gerencia De Proyectos"
- ].map((X,K)  => {
-     if (K>3) { 
-        return
+ ].map((X,K) => {
+     
+     if (K>=`${Izquierda}`&&K<=`${Derecha}`) { 
+        CarrerasVisibles.innerHTML += `<div class ="CarrerasCarrusel" style="left:${LongitudDiv}px"> ${X} </div>`;
+        ListaCarrerasMostradas.push(K);
+        
+        LongitudDiv+=Constante;
     }
     
-    CarrerasVisibles.innerHTML += `<div class ="CarrerasCarrusel" style="left:${LongitudDiv}px"> ${X} </div>`;
-    ListaCarrerasMostradas.push(K);
 
-    LongitudDiv+=Constante;
  })
+
+
+
 
 var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
 console.log(VariableCarreras)
 for (var x=0;x<VariableCarreras.length;x++){
     VariableCarreras[x].addEventListener("click", e =>{
         if (e.target == VariableCarreras[0]){
-           alert("0")
+        //    alert("izquierda")
+           if (Izquierda == 0){
+               Izquierda = ListaCarrusel.length
+           }
+           Izquierda -= 1
+           if(Derecha == 0){
+            Derecha =  ListaCarrusel.length
+        }
         }
         if (e.target == VariableCarreras[1]){
-            alert("1")
-         }
+            // alert("centro")
+            // callback(hola)
+        }
         if (e.target == VariableCarreras[2]){
-            alert("2")
-         }
-    })
+            // alert("derecha")
+            if(Derecha == ListaCarrusel.length){
+                Derecha =  0
+            }
+            if(Izquierda == ListaCarrusel.length){
+                Izquierda =  0
+            }
+            Izquierda += 1
+            Derecha += 1
+            // callback(hola)
+        
+        }
+
+
+
+
+        
+        ListaCarrerasMostradas = []
+        function hola(callback){
+            var ListaCarrusel = ["Ingeniería Informática ","Trabajo Social ", "Licenciatura En Artes "
+            ,"Administración De Negocios Internacionales" ,"Ingeniería En Química", "Especialización En Gerencia De Proyectos"
+            ].map((X,K) => {
+             
+             if (K>=`${Izquierda}`&&K<=`${Derecha}`) { 
+                CarrerasVisibles.innerHTML += `<div class ="CarrerasCarrusel" style="left:${LongitudDiv}px"> ${X} </div>`;
+                ListaCarrerasMostradas.push(K);
+                
+                LongitudDiv+=Constante;
+            }
+            
+         })
+         callback(hola)
+        }
+       
     
+    
+    })
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
