@@ -117,92 +117,71 @@ function reemplazarC(){
 
     }
 
-var CarrerasVisibles = document.getElementById("Carrusel")
 var LongitudDiv = document.getElementById("Carrusel").clientWidth/11;
 var Constante =LongitudDiv
-var Izquierda = 1
-var Derecha = 3
-var ListaCarrerasMostradas=[]
+
 var ListaCarrusel = ["Ingeniería Informática ","Trabajo Social ", "Licenciatura En Artes "
     ,"Administración De Negocios Internacionales" ,"Ingeniería En Química", "Especialización En Gerencia De Proyectos"
- ].map((X,K) => {
-     
-     if (K>=`${Izquierda}`&&K<=`${Derecha}`) { 
-        CarrerasVisibles.innerHTML += `<div class ="CarrerasCarrusel" style="left:${LongitudDiv}px"> ${X} </div>`;
-        ListaCarrerasMostradas.push(K);
+]   
+
+
+
+var CarrerasVisibles = document.getElementById("Carrusel")
+var ListaCarrerasMostradas = []
+var Izquierda = 0
+var Derecha = 2
+var variableayudante = 0
+// lista.shift()
+function Organizar(){
+
+    ListaCarrusel.map((X,K)=>{
+        // if (Izquierda>Derecha){
+        //     variableayudante = Izquierda
+        //     Izquierda = Derecha
+        //     Derecha = variableayudante
+        // }
+
+        console.log(X,K)
+        if (K >=Izquierda && K<=Derecha){
+            console.log("K: ", K)
+            ListaCarrerasMostradas.push(K)
+            // ListaCarrerasMostradas.splice
+            CarrerasVisibles.innerHTML+=`<div class =CarrerasCarrusel style="left:${Constante}px">${X}</div>`
+            // Constante
+        }
         
-        LongitudDiv+=Constante;
-    }
-    
-
- })
-
-
-
-
-var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
-console.log(VariableCarreras)
-for (var x=0;x<VariableCarreras.length;x++){
-    VariableCarreras[x].addEventListener("click", e =>{
-        if (e.target == VariableCarreras[0]){
-        //    alert("izquierda")
-           if (Izquierda == 0){
-               Izquierda = ListaCarrusel.length
-           }
-           Izquierda -= 1
-           if(Derecha == 0){
-            Derecha =  ListaCarrusel.length
-        }
-        }
-        if (e.target == VariableCarreras[1]){
-            // alert("centro")
-            // callback(hola)
-        }
-        if (e.target == VariableCarreras[2]){
-            // alert("derecha")
-            if(Derecha == ListaCarrusel.length){
-                Derecha =  0
-            }
-            if(Izquierda == ListaCarrusel.length){
-                Izquierda =  0
-            }
-            Izquierda += 1
-            Derecha += 1
-            // callback(hola)
         
-        }
-
-
-
-
-        
-        ListaCarrerasMostradas = []
-        function hola(callback){
-            var ListaCarrusel = ["Ingeniería Informática ","Trabajo Social ", "Licenciatura En Artes "
-            ,"Administración De Negocios Internacionales" ,"Ingeniería En Química", "Especialización En Gerencia De Proyectos"
-            ].map((X,K) => {
-             
-             if (K>=`${Izquierda}`&&K<=`${Derecha}`) { 
-                CarrerasVisibles.innerHTML += `<div class ="CarrerasCarrusel" style="left:${LongitudDiv}px"> ${X} </div>`;
-                ListaCarrerasMostradas.push(K);
-                
-                LongitudDiv+=Constante;
-            }
-            
-         })
-         callback(hola)
-        }
-       
-    
-    
     })
-
+    Organizar2()
 }
 
+function Organizar2(){
+var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
+// console.log(VariableCarreras)
+for (var x=0;x<VariableCarreras.length;x++){
+
+    VariableCarreras[x].addEventListener("click", e =>{
+        var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
 
 
+        if (e.target == VariableCarreras[0]){
 
+            }
+        if (e.target == VariableCarreras[1]){
 
+            }
+        if (e.target == VariableCarreras[2]){
+            ListaCarrusel.push(ListaCarrusel[0])
+            ListaCarrusel.shift()
+            }
+        CarrerasVisibles.innerHTML=""
+        ListaCarrerasMostradas=[]
+        Organizar()
+        })
+    }
+}
+
+Organizar()
 
 
 var el = document.getElementsByClassName('Semestres')
