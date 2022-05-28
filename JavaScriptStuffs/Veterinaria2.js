@@ -133,7 +133,8 @@ var Derecha = 2
 var variableayudante = 0
 // lista.shift()
 function Organizar(){
-
+    var LongitudDiv = document.getElementById("Carrusel").clientWidth/11;
+    var Constante =LongitudDiv
     ListaCarrusel.map((X,K)=>{
         // if (Izquierda>Derecha){
         //     variableayudante = Izquierda
@@ -146,8 +147,8 @@ function Organizar(){
             console.log("K: ", K)
             ListaCarrerasMostradas.push(K)
             // ListaCarrerasMostradas.splice
-            CarrerasVisibles.innerHTML+=`<div class =CarrerasCarrusel style="left:${Constante}px">${X}</div>`
-            // Constante
+            CarrerasVisibles.innerHTML+=`<div class =CarrerasCarrusel style="left:${LongitudDiv}px">${X}</div>`
+            LongitudDiv += Constante
         }
         
         
@@ -162,10 +163,15 @@ for (var x=0;x<VariableCarreras.length;x++){
 
     VariableCarreras[x].addEventListener("click", e =>{
         var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
-
+        var indicefinal = ListaCarrusel.length
+        indicefinal -= 1
+        var ultimoobjeto = ListaCarrusel[indicefinal]
+        console.log("ultimo objeto: ", ultimoobjeto)
 
         if (e.target == VariableCarreras[0]){
-
+            e.target.classList.add("izquierda")
+            ListaCarrusel.unshift(ultimoobjeto)
+            ListaCarrusel.pop()
             }
         if (e.target == VariableCarreras[1]){
 
