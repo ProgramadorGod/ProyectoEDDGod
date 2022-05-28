@@ -142,9 +142,9 @@ function Organizar(){
         //     Derecha = variableayudante
         // }
 
-        console.log(X,K)
+        // console.log(X,K)
         if (K >=Izquierda && K<=Derecha){
-            console.log("K: ", K)
+            // console.log("K: ", K)
             ListaCarrerasMostradas.push(K)
             // ListaCarrerasMostradas.splice
             CarrerasVisibles.innerHTML+=`<div class =CarrerasCarrusel style="left:${LongitudDiv}px">${X}</div>`
@@ -166,17 +166,26 @@ for (var x=0;x<VariableCarreras.length;x++){
         var indicefinal = ListaCarrusel.length
         indicefinal -= 1
         var ultimoobjeto = ListaCarrusel[indicefinal]
-        console.log("ultimo objeto: ", ultimoobjeto)
 
         if (e.target == VariableCarreras[0]){
-            e.target.classList.add("izquierda")
             ListaCarrusel.unshift(ultimoobjeto)
             ListaCarrusel.pop()
+            var ObjetoDerecha = VariableCarreras[0]       
+            // VariableCarreras[0].classList.add("izquierda")
+            ObjetoDerecha.classList.add("izquierda")
+            console.log(ObjetoDerecha)
+            // console.log(CarrerasVisibles.childElementCount(2))
+            VariableCarreras[1].classList.remove("izquierda")
+            VariableCarreras[2].classList.remove("izquierda")
+            console.log("MIRAMEEEE: ", VariableCarreras)
+
+
             }
         if (e.target == VariableCarreras[1]){
 
             }
         if (e.target == VariableCarreras[2]){
+
             ListaCarrusel.push(ListaCarrusel[0])
             ListaCarrusel.shift()
             }
