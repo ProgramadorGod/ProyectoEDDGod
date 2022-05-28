@@ -120,7 +120,7 @@ function reemplazarC(){
 var LongitudDiv = document.getElementById("Carrusel").clientWidth/11;
 var Constante =LongitudDiv
 
-var ListaCarrusel = ["Ingeniería Informática ","Trabajo Social ", "Licenciatura En Artes "
+var ListaCarrusel = ["Trabajo Social ","Ingeniería Informática ", "Licenciatura En Artes "
     ,"Administración De Negocios Internacionales" ,"Ingeniería En Química", "Especialización En Gerencia De Proyectos"
 ]   
 
@@ -131,6 +131,7 @@ var ListaCarrerasMostradas = []
 var Izquierda = 0
 var Derecha = 2
 var variableayudante = 0
+var Primeravez  = 1
 // lista.shift()
 function Organizar(){
     var LongitudDiv = document.getElementById("Carrusel").clientWidth/11;
@@ -144,17 +145,36 @@ function Organizar(){
 
         // console.log(X,K)
         if (K >=Izquierda && K<=Derecha){
-            // console.log("K: ", K)
+            console.log("K: ", K)
             ListaCarrerasMostradas.push(K)
             // ListaCarrerasMostradas.splice
+
             CarrerasVisibles.innerHTML+=`<div class =CarrerasCarrusel style="left:${LongitudDiv}px">${X}</div>`
             LongitudDiv += Constante
+            
         }
+
         
         
     })
+    var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
+    var ObjetoIzquierda = VariableCarreras[0]       
+    ObjetoIzquierda.classList.add("izquierda")
+    var ObjetoDerecha = VariableCarreras[2]       
+    ObjetoDerecha.classList.add("Derecha")
+    var ObjetoCentral = VariableCarreras[1]       
+    ObjetoCentral.classList.add("Centro")
+
     Organizar2()
+
+    
 }
+
+
+
+
+
+
 
 function Organizar2(){
 var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
@@ -188,7 +208,10 @@ for (var x=0;x<VariableCarreras.length;x++){
 
             ListaCarrusel.push(ListaCarrusel[0])
             ListaCarrusel.shift()
-            }
+
+            VariableCarreras[2].classList.add("Derecha")
+            console.log(VariableCarreras[2])
+        }
         CarrerasVisibles.innerHTML=""
         ListaCarrerasMostradas=[]
         Organizar()
@@ -199,8 +222,11 @@ for (var x=0;x<VariableCarreras.length;x++){
 Organizar()
 
 
-var el = document.getElementsByClassName('Semestres')
 
+
+
+
+var el = document.getElementsByClassName('Semestres')
 for(var x=0;x<el.length;x++){
     el[x].style.margin=`20px 10px`
 }

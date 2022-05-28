@@ -168,7 +168,7 @@ li{
     align-content: center;
     float:left;
     position: relative;
-    font: bold 25px "StarboardText";
+    font: bold 23px "StarboardText";
     /* color: #00B3FF; */
     /* margin: 10px; */
     text-align: center;
@@ -193,10 +193,35 @@ li{
 .CarrerasCarrusel:hover{
     -webkit-transition: ease 1s;
     background-color: #3a3e5c;
-    color: #051058bb;
+    color: #FFFFFF;
 }
 
 .izquierda{
-    background-color: #8f050544;
-    margin: 90px;
+    color: #00000083;
+    background-color: #ffffff83;
+}
+
+.izquierda:hover{
+    background-color: #3a3e5c81;
+    color: #0510584b;
+}
+
+.Derecha{
+    color: #00000083;
+
+    background-color: #FFFFFF83;
+    /* margin: 90px; */
+
+}
+
+.Derecha:hover{
+    background-color: #3a3e5c81;
+    color: #0510584b;
+}
+
+
+.Centro{
+    -webkit-transform: scale(123%);
+    box-shadow: #175b82 3px 3px 6px;
+    /* -webkit-transition: ease 1s; */
 }
