@@ -23,17 +23,23 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
 
 }
 
+#Escuelas{
+    /* margin: 25px 10px 20px; */
+    margin-left: 25px;
+}
+
 a{
     color: black;
 }
 #main{
     text-align: left;
-    margin: 25px 10px 20px;
-    border-bottom: 2px solid #051058;
+    width: 100%;
+    /* margin: 25px 10px 20px; */
+    /* border-bottom: 2px solid #051058; */
 }
 
 #inicial{
-    width: auto;
+    width: 100%;
     margin: 0%;
     padding: 0%;
 }
@@ -53,6 +59,7 @@ a{
 #Subtitle{
     /* text-align: left; */
     /* padding: 900px auto 15px; */
+    /* border-bottom: 2px solid #000; */
     font: bold 20px "StarboardText";
     color: #07125c;
 
@@ -62,6 +69,9 @@ a{
     font: bold 20px "StarboardText";
     margin: 10px 10px 500px;
     user-select:none;
+    border-top: 2px solid #051058;
+    padding-top: 5px;
+    padding-left: 20px;
 }
 
 

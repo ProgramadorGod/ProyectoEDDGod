@@ -173,7 +173,7 @@ function Organizar(){
 
 
 
-
+Primeravez = true
 
 
 function Organizar2(){
@@ -209,17 +209,27 @@ for (var x=0;x<VariableCarreras.length;x++){
                 return
             }
             console.log(MateriasCarreras)
-            MateriasCarreras.innerHTML = `<h4 class =invisible>a</h4>`
+            // MateriasCarreras.innerHTML = `<h4 class =invisible>a</h4>`
 
             ListaMaterias.map((X,K)=>{
-
                 console.log("X: ", X , "K :", K)
                 MateriasCarreras.innerHTML+=`<h4 class ="MateriaInterna Aparecer">${X}</h4>`
             })
             var Cuerpo = document.getElementById("BodySection")
-            Cuerpo.addEventListener("click",e=>{
-                MateriasCarreras.innerHTML = ""
-            },true)
+            if (Primeravez == true){
+                Cuerpo.addEventListener("click",BodiClic,true)
+                Primeravez = false
+            }
+
+            
+            function BodiClic(){
+                MateriasCarreras.innerHTML = `<h4 class =invisible>a</h4>`
+                console.log("bodypresionado y materias son: ", MateriasCarreras)
+            }
+
+
+
+
             // for(var i =0 ; i<ListaMaterias.length ;i++){
                 
             // }
