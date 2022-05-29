@@ -174,12 +174,10 @@ function Organizar(){
 
 
 
-var Hacer = true
 
 
 function Organizar2(){
 var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
-
 // console.log(VariableCarreras)
 for (var x=0;x<VariableCarreras.length;x++){
 
@@ -207,12 +205,12 @@ for (var x=0;x<VariableCarreras.length;x++){
         if (e.target == VariableCarreras[1]){
             ListaMaterias = ["matemáticas","fisica"]
             var MateriasCarreras = document.getElementById("MateriasCarrera")
-            if (Hacer == false){
+            if (MateriasCarreras == `<h4 class =invisible>a</h4>`){
                 return
             }
-            Hacer = false
             console.log(MateriasCarreras)
             MateriasCarreras.innerHTML = `<h4 class =invisible>a</h4>`
+
             ListaMaterias.map((X,K)=>{
 
                 console.log("X: ", X , "K :", K)
@@ -220,13 +218,7 @@ for (var x=0;x<VariableCarreras.length;x++){
             })
             var Cuerpo = document.getElementById("BodySection")
             Cuerpo.addEventListener("click",e=>{
-                MateriasCarreras.innerHTML = "";
-                console.log("oprimiste el body")
-                if (Hacer == true){
-                    return
-                }
-                Hacer = true
-
+                MateriasCarreras.innerHTML = ""
             },true)
             // for(var i =0 ; i<ListaMaterias.length ;i++){
                 
@@ -246,7 +238,7 @@ for (var x=0;x<VariableCarreras.length;x++){
         CarrerasVisibles.innerHTML=""
         ListaCarrerasMostradas=[]
         Organizar()
-        },true)
+        })
 
 
     }
