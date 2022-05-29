@@ -16,6 +16,10 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
 	font-family: "StarboardText" ;
 	src: url("Starboard DEMO.otf");
 }
+@font-face{
+	font-family: "Daily" ;
+	src: url("Daily Challenge DEMO.otf");
+}
 
 #BodySection{
     background-color: rgb(226, 226, 226);
@@ -37,7 +41,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
 
 .Semestres{
     background-color: rgba(43, 111, 201, 0.26);
-    font: bold 20px "StarboardText";
+    font: bold 20px "Daily";
     width: 180px;
     padding: 10px;
     /* margin-left: 30px; */
@@ -65,7 +69,7 @@ li{
 .Documentos{
     /* width: fit-content; */
     margin: 50px 60px;
-    font: bold 14px "StarboardText";
+    font: bold 14px "Daily";
     color: rgb(4, 27, 95);
 
     
@@ -74,6 +78,7 @@ li{
 
 
 #Bloques-xxx{
+    padding-top: 10px;
     height: 150px;
     /* border-bottom: 2px solid #051058bb  ; */
     /* text-align: center; */
@@ -90,7 +95,7 @@ li{
 }
 
 #Archivos{
-    font: bold 14px "StarboardText";
+    font: bold 14px "Daily";
     float: none;
 
 }
@@ -99,7 +104,7 @@ li{
     /* height: 60px; */
     width: 200px;
     float: left;
-    font: bold 20px "StarboardText";
+    font: bold 20px "Daily";
     margin: 10px 60px 90px;
     margin-bottom: 40px;
 
@@ -128,13 +133,16 @@ li{
 }
 
 .rojo{
-    background-color: #06188bbb;
+    background-color: #051058bb;
+    color: white;
+
     -webkit-transition: ease 0.5s;
 
 }
 
 .rojo:hover{
-    background-color: #06188bbb;
+    background-color: #051058bb;
+    color: white;
     -webkit-transition: ease 0.5s;
 
 
@@ -158,7 +166,13 @@ li{
 
 #Carrusel{
     /* border-bottom: 2px solid #000000; */
+    padding-top: 36px;
     height: 160px;
+    background-color:rgb(214, 214, 214);
+    margin-bottom: 60px;
+    width: 100%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
 }
 
 .CarrerasCarrusel{
@@ -192,12 +206,12 @@ li{
 
 .CarrerasCarrusel:hover{
     -webkit-transition: ease 1s;
-    background-color: #3a3e5c;
-    color: #FFFFFF;
 }
 
 .izquierda{
     color: #00000083;
+    box-shadow: rgba(0, 0, 0, 0.397) 1px 1px 2px;
+
     background-color: #ffffff83;
 }
 
@@ -208,7 +222,7 @@ li{
 
 .Derecha{
     color: #00000083;
-
+    box-shadow: rgba(0, 0, 0, 0.322) 1px 1px 2px;
     background-color: #FFFFFF83;
     /* margin: 90px; */
 
@@ -224,4 +238,75 @@ li{
     -webkit-transform: scale(123%);
     box-shadow: #175b82 3px 3px 6px;
     /* -webkit-transition: ease 1s; */
+}
+
+.Centro:hover{
+    /* transition-delay: 0.3s; */
+    transition-duration: 1.3s;
+    color: #FFFFFF;
+    background-color: #3a3e5c;
+    /* -webkit-transition-delay: ease 2s; */
+    
+
+	background: -webkit-repeating-radial-gradient(right, #049DD9, #023059);
+    background-color: #509cdf88;
+
+    box-shadow: #174582 3px 3px 6px;
+    
+}
+
+
+#FlechaLeft{
+    font: bold 30px "Daily";
+    color: rgba(0, 0, 0, 0.432);
+    user-select: none;
+    position: absolute;
+    left: 20px;
+    top: 400px;
+    
+}
+
+#FlechaRight{
+    user-select: none;
+    font: bold 30px "Daily";
+    color: rgba(0, 0, 0, 0.432);
+    position: absolute;
+    left: 1300px;
+    top: 400px;
+}
+#invisible{
+    color: rgba(255, 255, 255, 0);
+}
+@keyframes mianimacion{
+    0%{color:rgba(0, 0, 0, 0);}
+    100%{color:#000;}
+}
+
+#MateriasCarrera{
+    text-align: center;
+
+    
+    color:rgb(0, 0, 0);
+    font: bold 20px "StarboardText";
+    background-color: red;
+    width: 300px;
+    max-width:300px ;
+    height: 0px;
+    position: absolute;
+    top: 440px;
+    left: 520px;
+
+
+
+}
+.MateriaInterna{
+    padding-top:4px ;
+    padding-bottom:4px ;
+
+}
+.Aparecer{
+    animation-name: mianimacion;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+    
 }

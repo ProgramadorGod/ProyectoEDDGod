@@ -4,7 +4,7 @@ var element = document.getElementById('Content')
 const TITLES = [
     'Primer semestre',
     'Segundo semestre',
-    'Tercero semestre',
+    'Tercer semestre',
     'Cuarto semestre',
     'Quinto semestre',
     'Sexto semestre',
@@ -117,7 +117,7 @@ function reemplazarC(){
 
     }
 
-var LongitudDiv = document.getElementById("Carrusel").clientWidth/11;
+var LongitudDiv = document.getElementById("Carrusel").clientWidth/13;
 var Constante =LongitudDiv
 
 var ListaCarrusel = ["Trabajo Social ","Ingeniería Informática ", "Licenciatura En Artes "
@@ -134,7 +134,7 @@ var variableayudante = 0
 var Primeravez  = 1
 // lista.shift()
 function Organizar(){
-    var LongitudDiv = document.getElementById("Carrusel").clientWidth/11;
+    var LongitudDiv = document.getElementById("Carrusel").clientWidth/12;
     var Constante =LongitudDiv
     ListaCarrusel.map((X,K)=>{
         // if (Izquierda>Derecha){
@@ -174,13 +174,16 @@ function Organizar(){
 
 
 
+var Hacer = true
 
 
 function Organizar2(){
 var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
+
 // console.log(VariableCarreras)
 for (var x=0;x<VariableCarreras.length;x++){
 
+    // addEventListener("")
     VariableCarreras[x].addEventListener("click", e =>{
         var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
         var indicefinal = ListaCarrusel.length
@@ -202,8 +205,36 @@ for (var x=0;x<VariableCarreras.length;x++){
 
             }
         if (e.target == VariableCarreras[1]){
-
+            ListaMaterias = ["matemáticas","fisica"]
+            var MateriasCarreras = document.getElementById("MateriasCarrera")
+            if (Hacer == false){
+                return
             }
+            Hacer = false
+            console.log(MateriasCarreras)
+            MateriasCarreras.innerHTML = `<h4 class =invisible>a</h4>`
+            ListaMaterias.map((X,K)=>{
+
+                console.log("X: ", X , "K :", K)
+                MateriasCarreras.innerHTML+=`<h4 class ="MateriaInterna Aparecer">${X}</h4>`
+            })
+            var Cuerpo = document.getElementById("BodySection")
+            Cuerpo.addEventListener("click",e=>{
+                MateriasCarreras.innerHTML = "";
+                console.log("oprimiste el body")
+                if (Hacer == true){
+                    return
+                }
+                Hacer = true
+
+            },true)
+            // for(var i =0 ; i<ListaMaterias.length ;i++){
+                
+            // }
+            
+
+
+        }
         if (e.target == VariableCarreras[2]){
 
             ListaCarrusel.push(ListaCarrusel[0])
@@ -215,11 +246,14 @@ for (var x=0;x<VariableCarreras.length;x++){
         CarrerasVisibles.innerHTML=""
         ListaCarrerasMostradas=[]
         Organizar()
-        })
+        },true)
+
+
     }
 }
 
 Organizar()
+
 
 
 
