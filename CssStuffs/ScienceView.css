@@ -279,6 +279,7 @@ li{
 }
 @keyframes mianimacion{
     0%{color:rgba(0, 0, 0, 0);}
+    80%{color:rgba(0, 0, 0, 0)}
     100%{color:#000;}
 }
 
@@ -306,6 +307,7 @@ li{
 }
 .Aparecer{
     animation-name: mianimacion;
+    
 	animation-duration: 3s;
 	animation-timing-function: linear;
     

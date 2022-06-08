@@ -74,7 +74,7 @@ for(var el=0; el<elementList.length;el++) {
       })
 }
 
-
+var listainginf = ["matematemáticas", "biología"]
 
 function reemplazarA(){
     if (context.semester==""){
@@ -204,35 +204,48 @@ for (var x=0;x<VariableCarreras.length;x++){
             }
         if (e.target == VariableCarreras[1]){
             ListaMaterias = ["matemáticas","fisica"]
+            // console.log("xd::::: ", VariableCarreras[1].innerHTML)
+
+            if (VariableCarreras[1].innerHTML == "Ingeniería Informática "){
+                console.log("xd::::: ", VariableCarreras[1])
+            }
+            
             var MateriasCarreras = document.getElementById("MateriasCarrera")
             if (MateriasCarreras == `<h4 class =invisible>a</h4>`){
                 return
             }
             console.log(MateriasCarreras)
+
+
+
+
+
+
+
             // MateriasCarreras.innerHTML = `<h4 class =invisible>a</h4>`
 
-            ListaMaterias.map((X,K)=>{
-                console.log("X: ", X , "K :", K)
-                MateriasCarreras.innerHTML+=`<h4 class ="MateriaInterna Aparecer">${X}</h4>`
-            })
-            var Cuerpo = document.getElementById("BodySection")
-            if (Primeravez == true){
-                Cuerpo.addEventListener("click",BodiClic,true)
-                Primeravez = false
-            }
+            // ListaMaterias.map((X,K)=>{
+            //     console.log("X: ", X , "K :", K)
+            //     MateriasCarreras.innerHTML+=`<h4 class ="MateriaInterna Aparecer">${X}</h4>`
+            // })
+            // var Cuerpo = document.getElementById("BodySection")
+            // if (Primeravez == true){
+            //     Cuerpo.addEventListener("click",BodiClic,true)
+            //     Primeravez = false
+            // }
 
             
-            function BodiClic(){
-                MateriasCarreras.innerHTML = `<h4 class =invisible>a</h4>`
-                console.log("bodypresionado y materias son: ", MateriasCarreras)
-            }
-
-
-
+            // function BodiClic(){
+            //     MateriasCarreras.innerHTML = `<h4 class =invisible>a</h4>`
+            //     console.log("bodypresionado y materias son: ", MateriasCarreras)
+            // }
 
             // for(var i =0 ; i<ListaMaterias.length ;i++){
                 
             // }
+
+
+            
             
 
 
