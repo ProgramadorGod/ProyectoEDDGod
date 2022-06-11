@@ -23,6 +23,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
 
 #BodySection{
     background-color: rgb(226, 226, 226);
+    
     /* -webkit-transform:scale(110%); */
     /* margin-top: 50px;
     margin-left: 20px ; */
@@ -43,6 +44,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
     background-color: rgba(43, 111, 201, 0.26);
     font: bold 20px "Daily";
     width: 180px;
+    cursor:pointer;
     padding: 10px;
     /* margin-left: 30px; */
     box-shadow: #063377a4 2px 2px 5px;
@@ -57,6 +59,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
 .Semestres:hover{
     -webkit-transition: 0.5s;
     background-color: #051058bb;
+    
 
 }
 
@@ -79,6 +82,7 @@ li{
 
 #Bloques-xxx{
     padding-top: 10px;
+    
     height: 150px;
     /* border-bottom: 2px solid #051058bb  ; */
     /* text-align: center; */
@@ -103,6 +107,7 @@ li{
 .Cortes{
     /* height: 60px; */
     width: 200px;
+    cursor:pointer;
     float: left;
     font: bold 20px "Daily";
     margin: 10px 60px 90px;
@@ -134,6 +139,7 @@ li{
 
 .rojo{
     background-color: #051058bb;
+    cursor:pointer;
     color: white;
 
     -webkit-transition: ease 0.5s;
@@ -141,6 +147,7 @@ li{
 }
 
 .rojo:hover{
+    cursor:pointer;
     background-color: #051058bb;
     color: white;
     -webkit-transition: ease 0.5s;
@@ -150,6 +157,7 @@ li{
 
 
 .cortepresionado{
+    cursor:pointer;
     background-color: #3a3e5c;
     color: rgb(238, 235, 243);
     -webkit-transition: ease 0.5s;
@@ -176,6 +184,7 @@ li{
 }
 
 .CarrerasCarrusel{
+    cursor:pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -285,7 +294,7 @@ li{
 
 #MateriasCarrera{
     text-align: center;
-
+    
     
     color:rgb(0, 0, 0);
     font: bold 20px "StarboardText";
@@ -305,10 +314,68 @@ li{
     padding-bottom:4px ;
 
 }
+
+#MateriasHorizonal{
+    height: auto;
+}
+
+#cositas{
+    
+}
+
+
 .Aparecer{
     animation-name: mianimacion;
     
 	animation-duration: 3s;
 	animation-timing-function: linear;
     
+}
+
+.MateriaAñadida{
+    font: bold 25px "Daily";
+    padding: 10px;
+    user-select:none;
+    cursor:pointer;
+    
+    margin: 10px 40px;
+    display: flexbox;
+    float: left;
+    
+}
+@keyframes hola{
+    0%{height: 70px;}
+    0%{color:rgba(0, 0, 0, 0);}
+    10%{height: 80px;}
+    100%{height: 100px;}
+    100%{color: #000;}
+
+}
+
+.MateriasRecuadro{
+    -webkit-transition: ease 1s;
+    animation: hola 2s;
+    height: 100px;
+    
+}
+
+.simbolo{
+    font: bold 20px "StarboardText";
+    padding: 10px;
+    
+    margin: 10px 40px;
+    display: flexbox;
+    float: left;
+}
+
+@keyframes Mimir {
+    0%{height: 100px}
+    100%{height: 0px}
+}
+
+.Reposaito{
+    animation: Mimir 2s;
+    /* animation-iteration-count: 1; */
+    
+
 }

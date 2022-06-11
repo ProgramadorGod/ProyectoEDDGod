@@ -1,6 +1,7 @@
 
 var semesters = [... new Array(10).keys()]
 var element = document.getElementById('Content')
+var MateriasMostradas = document.getElementById("MateriasHorizontal")
 const TITLES = [
     'Primer semestre',
     'Segundo semestre',
@@ -74,7 +75,7 @@ for(var el=0; el<elementList.length;el++) {
       })
 }
 
-var listainginf = ["matematemáticas", "biología"]
+var listainginf = [">","Matematemáticas", "Biología", "Catedra Institucional"]
 
 function reemplazarA(){
     if (context.semester==""){
@@ -82,12 +83,12 @@ function reemplazarA(){
         elementList[0].classList.add("rojo")
     }
 
-context.court = 'corte 1'
-CorteA.classList.add("cortepresionado")
-CorteB.classList.remove("cortepresionado")
-CorteC.classList.remove("cortepresionado")
+    context.court = 'corte 1'
+    CorteA.classList.add("cortepresionado")
+    CorteB.classList.remove("cortepresionado")
+    CorteC.classList.remove("cortepresionado")
 
-console.log(context)
+    console.log(context)
 
     
 }
@@ -97,10 +98,10 @@ function reemplazarB(){
         elementList[0].classList.add("rojo")
     }
     context.court = 'corte 2'
-CorteA.classList.remove("cortepresionado")
-CorteB.classList.add("cortepresionado")
-CorteC.classList.remove("cortepresionado")
-console.log(context)
+    CorteA.classList.remove("cortepresionado")
+    CorteB.classList.add("cortepresionado")
+    CorteC.classList.remove("cortepresionado")
+    console.log(context)
 
 }
 
@@ -145,7 +146,6 @@ function Organizar(){
 
         // console.log(X,K)
         if (K >=Izquierda && K<=Derecha){
-            console.log("K: ", K)
             ListaCarrerasMostradas.push(K)
             // ListaCarrerasMostradas.splice
 
@@ -194,21 +194,35 @@ for (var x=0;x<VariableCarreras.length;x++){
             var ObjetoDerecha = VariableCarreras[0]       
             // VariableCarreras[0].classList.add("izquierda")
             ObjetoDerecha.classList.add("izquierda")
-            console.log(ObjetoDerecha)
             // console.log(CarrerasVisibles.childElementCount(2))
             VariableCarreras[1].classList.remove("izquierda")
             VariableCarreras[2].classList.remove("izquierda")
-            console.log("MIRAMEEEE: ", VariableCarreras)
-
+            MateriasMostradas.innerHTML = "";
+            console.log(MateriasMostradas.classList)
+            
+            for (var x = 0; x<MateriasMostradas.classList.length; x++){
+                
+                if (MateriasMostradas.classList[x] == "MateriasRecuadro"){
+                    MateriasMostradas.classList.add("Reposaito")
+                    MateriasMostradas.classList.remove("MateriasRecuadro")
+                }
+            }
 
             }
         if (e.target == VariableCarreras[1]){
             ListaMaterias = ["matemáticas","fisica"]
             // console.log("xd::::: ", VariableCarreras[1].innerHTML)
-
-            if (VariableCarreras[1].innerHTML == "Ingeniería Informática "){
-                console.log("xd::::: ", VariableCarreras[1])
+            // MateriasMostradas.innerHTML += listainginf[i]
+            MateriasMostradas.innerHTML =""
+            for (var i = 0; i<listainginf.length;i++){
+                if (i == 0){
+                    MateriasMostradas.innerHTML += `<h4 class = "simbolo">${listainginf[i]}</h4>`
+                }
+                else{MateriasMostradas.innerHTML += `<h4 class = "MateriaAñadida">${listainginf[i]}</h4>`}
             }
+            
+            MateriasMostradas.classList.add("MateriasRecuadro")
+            MateriasMostradas.classList.remove("Reposaito")
             
             var MateriasCarreras = document.getElementById("MateriasCarrera")
             if (MateriasCarreras == `<h4 class =invisible>a</h4>`){
@@ -216,7 +230,7 @@ for (var x=0;x<VariableCarreras.length;x++){
             }
             console.log(MateriasCarreras)
 
-
+            
 
 
 
@@ -257,7 +271,19 @@ for (var x=0;x<VariableCarreras.length;x++){
 
             VariableCarreras[2].classList.add("Derecha")
             console.log(VariableCarreras[2])
+
+            for (var x = 0; x<MateriasMostradas.classList.length; x++){
+                
+                if (MateriasMostradas.classList[x] == "MateriasRecuadro"){
+                    MateriasMostradas.innerHTML = ""
+                    MateriasMostradas.classList.add("Reposaito")
+                    MateriasMostradas.classList.remove("MateriasRecuadro")
+                }
+            }
+            
         }
+
+
         CarrerasVisibles.innerHTML=""
         ListaCarrerasMostradas=[]
         Organizar()
