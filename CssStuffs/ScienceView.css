@@ -16,9 +16,14 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
 	font-family: "StarboardText" ;
 	src: url("Starboard DEMO.otf");
 }
+@font-face{
+	font-family: "Daily" ;
+	src: url("Daily Challenge DEMO.otf");
+}
 
 #BodySection{
     background-color: rgb(226, 226, 226);
+    
     /* -webkit-transform:scale(110%); */
     /* margin-top: 50px;
     margin-left: 20px ; */
@@ -37,8 +42,9 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
 
 .Semestres{
     background-color: rgba(43, 111, 201, 0.26);
-    font: bold 20px "StarboardText";
+    font: bold 20px "Daily";
     width: 180px;
+    cursor:pointer;
     padding: 10px;
     /* margin-left: 30px; */
     box-shadow: #063377a4 2px 2px 5px;
@@ -53,6 +59,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
 .Semestres:hover{
     -webkit-transition: 0.5s;
     background-color: #051058bb;
+    
 
 }
 
@@ -65,7 +72,7 @@ li{
 .Documentos{
     /* width: fit-content; */
     margin: 50px 60px;
-    font: bold 14px "StarboardText";
+    font: bold 14px "Daily";
     color: rgb(4, 27, 95);
 
     
@@ -74,6 +81,8 @@ li{
 
 
 #Bloques-xxx{
+    padding-top: 10px;
+    
     height: 150px;
     /* border-bottom: 2px solid #051058bb  ; */
     /* text-align: center; */
@@ -90,7 +99,7 @@ li{
 }
 
 #Archivos{
-    font: bold 14px "StarboardText";
+    font: bold 14px "Daily";
     float: none;
 
 }
@@ -98,8 +107,9 @@ li{
 .Cortes{
     /* height: 60px; */
     width: 200px;
+    cursor:pointer;
     float: left;
-    font: bold 20px "StarboardText";
+    font: bold 20px "Daily";
     margin: 10px 60px 90px;
     margin-bottom: 40px;
 
@@ -128,13 +138,18 @@ li{
 }
 
 .rojo{
-    background-color: #06188bbb;
+    background-color: #051058bb;
+    cursor:pointer;
+    color: white;
+
     -webkit-transition: ease 0.5s;
 
 }
 
 .rojo:hover{
-    background-color: #06188bbb;
+    cursor:pointer;
+    background-color: #051058bb;
+    color: white;
     -webkit-transition: ease 0.5s;
 
 
@@ -142,6 +157,7 @@ li{
 
 
 .cortepresionado{
+    cursor:pointer;
     background-color: #3a3e5c;
     color: rgb(238, 235, 243);
     -webkit-transition: ease 0.5s;
@@ -157,18 +173,25 @@ li{
 }
 
 #Carrusel{
-    border-bottom: 2px solid #000000;
-    height: 130px;
+    /* border-bottom: 2px solid #000000; */
+    padding-top: 36px;
+    height: 160px;
+    background-color:rgb(214, 214, 214);
+    margin-bottom: 60px;
+    width: 100%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
 }
 
 .CarrerasCarrusel{
+    cursor:pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
     float:left;
     position: relative;
-    font: bold 25px "StarboardText";
+    font: bold 23px "StarboardText";
     /* color: #00B3FF; */
     /* margin: 10px; */
     text-align: center;
@@ -192,6 +215,167 @@ li{
 
 .CarrerasCarrusel:hover{
     -webkit-transition: ease 1s;
+}
+
+.izquierda{
+    color: #00000083;
+    box-shadow: rgba(0, 0, 0, 0.397) 1px 1px 2px;
+
+    background-color: #ffffff83;
+}
+
+.izquierda:hover{
+    background-color: #3a3e5c81;
+    color: #0510584b;
+}
+
+.Derecha{
+    color: #00000083;
+    box-shadow: rgba(0, 0, 0, 0.322) 1px 1px 2px;
+    background-color: #FFFFFF83;
+    /* margin: 90px; */
+
+}
+
+.Derecha:hover{
+    background-color: #3a3e5c81;
+    color: #0510584b;
+}
+
+
+.Centro{
+    -webkit-transform: scale(123%);
+    box-shadow: #175b82 3px 3px 6px;
+    /* -webkit-transition: ease 1s; */
+}
+
+.Centro:hover{
+    /* transition-delay: 0.3s; */
+    transition-duration: 1.3s;
+    color: #FFFFFF;
     background-color: #3a3e5c;
-    color: #051058bb;
+    /* -webkit-transition-delay: ease 2s; */
+    
+
+	background: -webkit-repeating-radial-gradient(right, #049DD9, #023059);
+    background-color: #509cdf88;
+
+    box-shadow: #174582 3px 3px 6px;
+    
+}
+
+
+#FlechaLeft{
+    font: bold 30px "Daily";
+    color: rgba(0, 0, 0, 0.432);
+    user-select: none;
+    position: absolute;
+    left: 20px;
+    top: 400px;
+    
+}
+
+#FlechaRight{
+    user-select: none;
+    font: bold 30px "Daily";
+    color: rgba(0, 0, 0, 0.432);
+    position: absolute;
+    left: 1300px;
+    top: 400px;
+}
+#invisible{
+    color: rgba(255, 255, 255, 0);
+}
+@keyframes mianimacion{
+    0%{color:rgba(0, 0, 0, 0);}
+    80%{color:rgba(0, 0, 0, 0)}
+    100%{color:#000;}
+}
+
+#MateriasCarrera{
+    text-align: center;
+    
+    
+    color:rgb(0, 0, 0);
+    font: bold 20px "StarboardText";
+    background-color: red;
+    width: 300px;
+    max-width:300px ;
+    height: 0px;
+    position: absolute;
+    top: 440px;
+    left: 520px;
+
+
+
+}
+.MateriaInterna{
+    padding-top:4px ;
+    padding-bottom:4px ;
+
+}
+
+#MateriasHorizonal{
+    height: auto;
+}
+
+#cositas{
+    
+}
+
+
+.Aparecer{
+    animation-name: mianimacion;
+    
+	animation-duration: 3s;
+	animation-timing-function: linear;
+    
+}
+
+.MateriaAñadida{
+    font: bold 25px "Daily";
+    padding: 10px;
+    user-select:none;
+    cursor:pointer;
+    
+    margin: 10px 40px;
+    display: flexbox;
+    float: left;
+    
+}
+@keyframes hola{
+    0%{height: 70px;}
+    0%{color:rgba(0, 0, 0, 0);}
+    10%{height: 80px;}
+    100%{height: 100px;}
+    100%{color: #000;}
+
+}
+
+.MateriasRecuadro{
+    -webkit-transition: ease 1s;
+    animation: hola 2s;
+    height: 100px;
+    
+}
+
+.simbolo{
+    font: bold 20px "StarboardText";
+    padding: 10px;
+    
+    margin: 10px 40px;
+    display: flexbox;
+    float: left;
+}
+
+@keyframes Mimir {
+    0%{height: 100px}
+    100%{height: 0px}
+}
+
+.Reposaito{
+    animation: Mimir 2s;
+    /* animation-iteration-count: 1; */
+    
+
 }

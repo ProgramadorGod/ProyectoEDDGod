@@ -1,10 +1,11 @@
 
 var semesters = [... new Array(10).keys()]
 var element = document.getElementById('Content')
+var MateriasMostradas = document.getElementById("MateriasHorizontal")
 const TITLES = [
     'Primer semestre',
     'Segundo semestre',
-    'Tercero semestre',
+    'Tercer semestre',
     'Cuarto semestre',
     'Quinto semestre',
     'Sexto semestre',
@@ -74,7 +75,7 @@ for(var el=0; el<elementList.length;el++) {
       })
 }
 
-
+var listainginf = [">","Matematemáticas", "Biología", "Catedra Institucional"]
 
 function reemplazarA(){
     if (context.semester==""){
@@ -82,12 +83,12 @@ function reemplazarA(){
         elementList[0].classList.add("rojo")
     }
 
-context.court = 'corte 1'
-CorteA.classList.add("cortepresionado")
-CorteB.classList.remove("cortepresionado")
-CorteC.classList.remove("cortepresionado")
+    context.court = 'corte 1'
+    CorteA.classList.add("cortepresionado")
+    CorteB.classList.remove("cortepresionado")
+    CorteC.classList.remove("cortepresionado")
 
-console.log(context)
+    console.log(context)
 
     
 }
@@ -97,10 +98,10 @@ function reemplazarB(){
         elementList[0].classList.add("rojo")
     }
     context.court = 'corte 2'
-CorteA.classList.remove("cortepresionado")
-CorteB.classList.add("cortepresionado")
-CorteC.classList.remove("cortepresionado")
-console.log(context)
+    CorteA.classList.remove("cortepresionado")
+    CorteB.classList.add("cortepresionado")
+    CorteC.classList.remove("cortepresionado")
+    console.log(context)
 
 }
 
@@ -117,87 +118,182 @@ function reemplazarC(){
 
     }
 
-var CarrerasVisibles = document.getElementById("Carrusel")
-var LongitudDiv = document.getElementById("Carrusel").clientWidth/11;
+var LongitudDiv = document.getElementById("Carrusel").clientWidth/13;
 var Constante =LongitudDiv
-var Izquierda = 1
-var Derecha = 3
-var ListaCarrerasMostradas=[]
-var ListaCarrusel = ["Ingeniería Informática ","Trabajo Social ", "Licenciatura En Artes "
+
+var ListaCarrusel = ["Trabajo Social ","Ingeniería Informática ", "Licenciatura En Artes "
     ,"Administración De Negocios Internacionales" ,"Ingeniería En Química", "Especialización En Gerencia De Proyectos"
- ].map((X,K) => {
-     
-     if (K>=`${Izquierda}`&&K<=`${Derecha}`) { 
-        CarrerasVisibles.innerHTML += `<div class ="CarrerasCarrusel" style="left:${LongitudDiv}px"> ${X} </div>`;
-        ListaCarrerasMostradas.push(K);
+]   
+
+
+
+var CarrerasVisibles = document.getElementById("Carrusel")
+var ListaCarrerasMostradas = []
+var Izquierda = 0
+var Derecha = 2
+var variableayudante = 0
+var Primeravez  = 1
+// lista.shift()
+function Organizar(){
+    var LongitudDiv = document.getElementById("Carrusel").clientWidth/12;
+    var Constante =LongitudDiv
+    ListaCarrusel.map((X,K)=>{
+        // if (Izquierda>Derecha){
+        //     variableayudante = Izquierda
+        //     Izquierda = Derecha
+        //     Derecha = variableayudante
+        // }
+
+        // console.log(X,K)
+        if (K >=Izquierda && K<=Derecha){
+            ListaCarrerasMostradas.push(K)
+            // ListaCarrerasMostradas.splice
+
+            CarrerasVisibles.innerHTML+=`<div class =CarrerasCarrusel style="left:${LongitudDiv}px">${X}</div>`
+            LongitudDiv += Constante
+            
+        }
+
         
-        LongitudDiv+=Constante;
-    }
+        
+    })
+    var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
+    var ObjetoIzquierda = VariableCarreras[0]       
+    ObjetoIzquierda.classList.add("izquierda")
+    var ObjetoDerecha = VariableCarreras[2]       
+    ObjetoDerecha.classList.add("Derecha")
+    var ObjetoCentral = VariableCarreras[1]       
+    ObjetoCentral.classList.add("Centro")
+
+    Organizar2()
+
     
-
- })
-
+}
 
 
 
+
+Primeravez = true
+
+
+function Organizar2(){
 var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
-console.log(VariableCarreras)
+// console.log(VariableCarreras)
 for (var x=0;x<VariableCarreras.length;x++){
+
+    // addEventListener("")
     VariableCarreras[x].addEventListener("click", e =>{
+        var VariableCarreras = document.getElementsByClassName("CarrerasCarrusel")
+        var indicefinal = ListaCarrusel.length
+        indicefinal -= 1
+        var ultimoobjeto = ListaCarrusel[indicefinal]
+
         if (e.target == VariableCarreras[0]){
-        //    alert("izquierda")
-           if (Izquierda == 0){
-               Izquierda = ListaCarrusel.length
-           }
-           Izquierda -= 1
-           if(Derecha == 0){
-            Derecha =  ListaCarrusel.length
-        }
-        }
-        if (e.target == VariableCarreras[1]){
-            // alert("centro")
-            // callback(hola)
-        }
-        if (e.target == VariableCarreras[2]){
-            // alert("derecha")
-            if(Derecha == ListaCarrusel.length){
-                Derecha =  0
-            }
-            if(Izquierda == ListaCarrusel.length){
-                Izquierda =  0
-            }
-            Izquierda += 1
-            Derecha += 1
-            // callback(hola)
-        
-        }
-
-
-
-
-        
-        ListaCarrerasMostradas = []
-        function hola(callback){
-            var ListaCarrusel = ["Ingeniería Informática ","Trabajo Social ", "Licenciatura En Artes "
-            ,"Administración De Negocios Internacionales" ,"Ingeniería En Química", "Especialización En Gerencia De Proyectos"
-            ].map((X,K) => {
-             
-             if (K>=`${Izquierda}`&&K<=`${Derecha}`) { 
-                CarrerasVisibles.innerHTML += `<div class ="CarrerasCarrusel" style="left:${LongitudDiv}px"> ${X} </div>`;
-                ListaCarrerasMostradas.push(K);
+            ListaCarrusel.unshift(ultimoobjeto)
+            ListaCarrusel.pop()
+            var ObjetoDerecha = VariableCarreras[0]       
+            // VariableCarreras[0].classList.add("izquierda")
+            ObjetoDerecha.classList.add("izquierda")
+            // console.log(CarrerasVisibles.childElementCount(2))
+            VariableCarreras[1].classList.remove("izquierda")
+            VariableCarreras[2].classList.remove("izquierda")
+            MateriasMostradas.innerHTML = "";
+            console.log(MateriasMostradas.classList)
+            
+            for (var x = 0; x<MateriasMostradas.classList.length; x++){
                 
-                LongitudDiv+=Constante;
+                if (MateriasMostradas.classList[x] == "MateriasRecuadro"){
+                    MateriasMostradas.classList.add("Reposaito")
+                    MateriasMostradas.classList.remove("MateriasRecuadro")
+                }
+            }
+
+            }
+        if (e.target == VariableCarreras[1]){
+            ListaMaterias = ["matemáticas","fisica"]
+            // console.log("xd::::: ", VariableCarreras[1].innerHTML)
+            // MateriasMostradas.innerHTML += listainginf[i]
+            MateriasMostradas.innerHTML =""
+            for (var i = 0; i<listainginf.length;i++){
+                if (i == 0){
+                    MateriasMostradas.innerHTML += `<h4 class = "simbolo">${listainginf[i]}</h4>`
+                }
+                else{MateriasMostradas.innerHTML += `<h4 class = "MateriaAñadida">${listainginf[i]}</h4>`}
             }
             
-         })
-         callback(hola)
-        }
-       
-    
-    
-    })
+            MateriasMostradas.classList.add("MateriasRecuadro")
+            MateriasMostradas.classList.remove("Reposaito")
+            
+            var MateriasCarreras = document.getElementById("MateriasCarrera")
+            if (MateriasCarreras == `<h4 class =invisible>a</h4>`){
+                return
+            }
+            console.log(MateriasCarreras)
 
+            
+
+
+
+
+
+            // MateriasCarreras.innerHTML = `<h4 class =invisible>a</h4>`
+
+            // ListaMaterias.map((X,K)=>{
+            //     console.log("X: ", X , "K :", K)
+            //     MateriasCarreras.innerHTML+=`<h4 class ="MateriaInterna Aparecer">${X}</h4>`
+            // })
+            // var Cuerpo = document.getElementById("BodySection")
+            // if (Primeravez == true){
+            //     Cuerpo.addEventListener("click",BodiClic,true)
+            //     Primeravez = false
+            // }
+
+            
+            // function BodiClic(){
+            //     MateriasCarreras.innerHTML = `<h4 class =invisible>a</h4>`
+            //     console.log("bodypresionado y materias son: ", MateriasCarreras)
+            // }
+
+            // for(var i =0 ; i<ListaMaterias.length ;i++){
+                
+            // }
+
+
+            
+            
+
+
+        }
+        if (e.target == VariableCarreras[2]){
+
+            ListaCarrusel.push(ListaCarrusel[0])
+            ListaCarrusel.shift()
+
+            VariableCarreras[2].classList.add("Derecha")
+            console.log(VariableCarreras[2])
+
+            for (var x = 0; x<MateriasMostradas.classList.length; x++){
+                
+                if (MateriasMostradas.classList[x] == "MateriasRecuadro"){
+                    MateriasMostradas.innerHTML = ""
+                    MateriasMostradas.classList.add("Reposaito")
+                    MateriasMostradas.classList.remove("MateriasRecuadro")
+                }
+            }
+            
+        }
+
+
+        CarrerasVisibles.innerHTML=""
+        ListaCarrerasMostradas=[]
+        Organizar()
+        })
+
+
+    }
 }
+
+Organizar()
 
 
 
@@ -206,7 +302,6 @@ for (var x=0;x<VariableCarreras.length;x++){
 
 
 var el = document.getElementsByClassName('Semestres')
-
 for(var x=0;x<el.length;x++){
     el[x].style.margin=`20px 10px`
 }

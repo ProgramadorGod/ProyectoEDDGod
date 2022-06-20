@@ -6,10 +6,8 @@ window.addEventListener("resize",(e) => {
 
     var el = document.getElementsByClassName('cubo-xxx')
     for(var x=0;x<el.length;x++){
-        // $(document).ready(function(){
-        //     var ancho=$('.cubo-xxx').width();
-        //     console.log("el ancho es " +ancho)
-        // })
+        el[x].style.display="flex";
+        el[x].style="align-items = center;";
         if(a>133){
             var a = document.getElementById("Cuadrados").clientWidth/9
             el[x].style.margin=`10px 20px 50px`;
@@ -41,6 +39,9 @@ window.addEventListener("load",(e) => {
 
     var el = document.getElementsByClassName('cubo-xxx')
     for(var x=0;x<el.length;x++) {
+        el[x].style.display="flex";
+        el[x].style="align-items = center;";
+        
         if (a>133){
             var a = document.getElementById("Cuadrados").clientWidth/9
             el[x].style.margin=`10px 20px 50px`;
